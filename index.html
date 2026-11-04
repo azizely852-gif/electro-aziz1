@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electro Aziz - Abonnements IPTV Premium & Activation IBO Player</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">Numéro copié !</div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-content">
+      <a href="#" class="logo">
+        <div class="logo-icon">EA</div>
+        <div>Electro <span>Aziz</span></div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#plans" class="nav-link" data-i18n-fr="Abonnements" data-i18n-ar="الاشتراكات" data-i18n-en="Plans">Abonnements</a></li>
+        <li><a href="#ibo-player" class="nav-link highlight" data-i18n-fr="IBO Player" data-i18n-ar="تطبيق IBO" data-i18n-en="IBO Player">IBO Player</a></li>
+        <li><a href="#bouquets" class="nav-link" data-i18n-fr="Bouquets" data-i18n-ar="الباقات" data-i18n-en="Channels">Bouquets</a></li>
+        <li><a href="#free-trial" class="nav-link" data-i18n-fr="Test 24H" data-i18n-ar="تجربة 24H" data-i18n-en="Free Trial">Test 24H</a></li>
+        <li><a href="#speed" class="nav-link" data-i18n-fr="Test Débit" data-i18n-ar="قياس السرعة" data-i18n-en="Speed Test">Test Débit</a></li>
+        <li><a href="#faq" class="nav-link" data-i18n-fr="FAQ" data-i18n-ar="الأسئلة الشائعة" data-i18n-en="FAQ">FAQ</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <!-- Currency -->
+        <div class="btn-group">
+          <button class="btn-toggle active" data-curr="MAD" onclick="changeCurrency('MAD')">MAD</button>
+          <button class="btn-toggle" data-curr="EUR" onclick="changeCurrency('EUR')">EUR</button>
+          <button class="btn-toggle" data-curr="USD" onclick="changeCurrency('USD')">USD</button>
+        </div>
+
+        <!-- Language -->
+        <div class="btn-group">
+          <button class="btn-toggle active" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+          <button class="btn-toggle" data-lang="ar" onclick="changeLanguage('ar')">عربي</button>
+          <button class="btn-toggle" data-lang="en" onclick="changeLanguage('en')">EN</button>
+        </div>
+
+        <!-- Direct WhatsApp Call -->
+        <a href="https://wa.me/212666451752" target="_blank" class="btn-whatsapp-header">
+          <span>+212 666-451752</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        <span data-i18n-fr="Serveur Haute Performance 2026" data-i18n-ar="سيرفرات فائقة السرعة لسنة 2026" data-i18n-en="High Performance 2026 Server">Serveur Haute Performance 2026</span>
+        <span>·</span>
+        <span style="color: #10B981; font-family: monospace;">Anti-Freeze 99.9%</span>
+      </div>
+
+      <h1>
+        <span data-i18n-fr="L'Excellence du Streaming Télévision" data-i18n-ar="عالم التلفزيون والبث" data-i18n-en="The Pinnacle of Television Streaming">L'Excellence du Streaming Télévision</span>
+        <br>4K Ultra HD
+      </h1>
+
+      <p data-i18n-fr="Accédez à plus de 18 000 chaînes directes internationales (Sports, Cinéma, Séries) et 60 000+ VOD avec activation instantanée IBO Player." data-i18n-ar="استمتع بأكثر من 18,000 قناة تلفزيونية مباشرة تشمل أقوى باقات الرياضة والسينما والترفيه مع تفعيل رسمي لتطبيق IBO Player." data-i18n-en="Access over 18,000 live international TV channels (Sports, Cinema, Series) and 60,000+ VOD with instant IBO Player activation.">
+        Accédez à plus de 18 000 chaînes directes internationales (Sports, Cinéma, Séries) et 60 000+ VOD avec activation instantanée IBO Player.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#plans" class="btn-primary" data-i18n-fr="Découvrir les Abonnements" data-i18n-ar="تصفح باقات الاشتراك" data-i18n-en="View Subscription Plans">
+          Découvrir les Abonnements
+        </a>
+        <a href="#free-trial" class="btn-secondary" data-i18n-fr="Demander un Test 24H" data-i18n-ar="طلب تجربة مجانية 24H" data-i18n-en="Request 24H Free Trial">
+          Demander un Test 24H
+        </a>
+      </div>
+
+      <div class="live-activity-bar">
+        <span class="pulse-dot"></span>
+        <span id="activity-status-text">Aziz disponible en direct</span>
+        <span>·</span>
+        <span style="color: #10B981; font-weight: bold; cursor: pointer;" onclick="copyPhone(event)" title="Cliquer pour copier">+212666451752</span>
+      </div>
+
+      <!-- TV Screen Showcase Media -->
+      <div class="hero-media">
+        <img src="./images/hero_iptv_streaming.jpg" alt="Electro Aziz IPTV Streaming 4K">
+      </div>
+
+      <!-- Metrics -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-val">+18 000</div>
+          <div class="metric-title" data-i18n-fr="Chaînes en Direct" data-i18n-ar="قناة فضائية مباشرة" data-i18n-en="Live Channels">Chaînes en Direct</div>
+          <div class="metric-sub">Sport, Arabes, France, Monde</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">IBO Player</div>
+          <div class="metric-title" data-i18n-fr="Activation Officielle" data-i18n-ar="تفعيل رسمي معتمد" data-i18n-en="Official License">Activation Officielle</div>
+          <div class="metric-sub">Samsung, LG, Firestick, Android</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">99.9%</div>
+          <div class="metric-title" data-i18n-fr="Anti-Freeze Uptime" data-i18n-ar="استقرار بدون تقطيع" data-i18n-en="Anti-Freeze Uptime">Anti-Freeze Uptime</div>
+          <div class="metric-sub">Stabilité garantie grands matchs</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">&lt; 5 min</div>
+          <div class="metric-title" data-i18n-fr="Activation WhatsApp" data-i18n-ar="تفعيل سريع عبر واتساب" data-i18n-en="Instant WhatsApp Setup">Activation WhatsApp</div>
+          <div class="metric-sub">Assistance directe avec Aziz</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="plans" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n-fr="Tarifs & Formules" data-i18n-ar="الأسعار والباقات" data-i18n-en="Pricing & Plans">Tarifs & Formules</span>
+        <h2 class="section-title" data-i18n-fr="Nos Abonnements IPTV Premium" data-i18n-ar="عروض واشتراكات IPTV" data-i18n-en="Our Premium IPTV Plans">Nos Abonnements IPTV Premium</h2>
+        <p class="section-desc" data-i18n-fr="Qualité 4K / FHD / HEVC garantie sur toutes les Smart TV, Box Android, Firestick et Smartphones." data-i18n-ar="بث فائق الدقة 4K و FHD يعمل على الشاشات الذكية، أجهزة الأندرويد، الهواتف والحواسيب." data-i18n-en="Guaranteed 4K/FHD streaming on Smart TVs, Android boxes, Firesticks and phones.">
+          Qualité 4K / FHD / HEVC garantie sur toutes les Smart TV, Box Android, Firestick et Smartphones.
+        </p>
+      </div>
+
+      <div id="pricing-cards-container" class="pricing-grid">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Dedicated IBO Player Section -->
+  <section id="ibo-player" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">IBO PLAYER PRO</span>
+        <h2 class="section-title" data-i18n-fr="Activation Officielle IBO Player" data-i18n-ar="التفعيل الرسمي لتطبيق IBO Player" data-i18n-en="Official IBO Player Activation">Activation Officielle IBO Player</h2>
+        <p class="section-desc" data-i18n-fr="Le lecteur vidéo le plus rapide et le plus fluide du marché pour Samsung Tizen et LG webOS." data-i18n-ar="أفضل وأسرع مشغل وسائط لشاشات سامسونج وإل جي وأجهزة التي في بوكس." data-i18n-en="The fastest, most fluid media player for Samsung Tizen and LG webOS.">
+          Le lecteur vidéo le plus rapide et le plus fluide du marché pour Samsung Tizen et LG webOS.
+        </p>
+      </div>
+
+      <div class="ibo-split">
+        <div>
+          <div class="hero-media" style="margin-top: 0;">
+            <img src="./images/ibo_player_interface.jpg" alt="IBO Player Interface">
+          </div>
+        </div>
+
+        <div class="ibo-card">
+          <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1.5rem;" data-i18n-fr="Activez votre lecteur en 2 minutes" data-i18n-ar="تفعيل تطبيقك في دقيقتين" data-i18n-en="Activate your player in 2 minutes">Activez votre lecteur en 2 minutes</h3>
+          
+          <form onsubmit="submitIboActivation(event)">
+            <div class="form-group">
+              <label class="form-label" data-i18n-fr="Sélectionnez votre formule :" data-i18n-ar="اختر نوع التفعيل :" data-i18n-en="Choose your package:">Sélectionnez votre formule :</label>
+              <select id="ibo-package-select" class="form-select">
+                <option value="Pack Combo : IBO Player + IPTV 12 Mois (Recommandé)">Pack Combo : IBO Player + IPTV 12 Mois (Recommandé)</option>
+                <option value="Licence IBO Player Seule (1 An)">Licence IBO Player Seule (1 An)</option>
+                <option value="Licence IBO Player Seule (À Vie - Lifetime)">Licence IBO Player Seule (À Vie - Lifetime)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Device MAC Address (Adresse MAC) :</label>
+              <input type="text" id="ibo-mac-input" class="form-input" placeholder="Ex: 00:1a:79:xx:xx:xx" maxlength="17" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Device Key (Clé de l'appareil) :</label>
+              <input type="text" id="ibo-key-input" class="form-input" placeholder="Ex: 123456" required>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+              <span data-i18n-fr="Valider & Activer sur WhatsApp" data-i18n-ar="تأكيد والتفعيل عبر الواتساب" data-i18n-en="Confirm & Activate on WhatsApp">Valider & Activer sur WhatsApp</span>
+            </button>
+            <p style="font-size: 0.75rem; color: #94A3B8; text-align: center; margin-top: 0.75rem;">
+              WhatsApp Direct : +212666451752
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bouquets Catalog -->
+  <section id="bouquets" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n-fr="Bouquets & Chaînes" data-i18n-ar="الباقات والقنوات" data-i18n-en="Channels & Packages">Bouquets & Chaînes</span>
+        <h2 class="section-title" data-i18n-fr="Toutes les Chaînes Mondiales en 4K" data-i18n-ar="جميع القنوات العالمية بدقة 4K" data-i18n-en="World Channels in 4K UHD">Toutes les Chaînes Mondiales en 4K</h2>
+        <div style="margin-top: 1.5rem; max-width: 400px; margin-left: auto; margin-right: auto;">
+          <input type="text" oninput="filterChannels(event)" class="form-input" placeholder="Rechercher une chaîne (beIN, Canal+, MBC...)...">
+        </div>
+      </div>
+
+      <div class="bouquets-grid">
+        <div class="bouquet-card">
+          <div class="bouquet-title">⚽ Sports Direct 4K 60FPS</div>
+          <div class="bouquet-desc">Tous les matchs de Ligue des Champions, Premier League, LaLiga, Botola Pro.</div>
+          <div>
+            <span class="channel-tag">beIN Sports 1-8 4K</span>
+            <span class="channel-tag">Canal+ Sport & Foot</span>
+            <span class="channel-tag">Sky Sports UK/DE</span>
+            <span class="channel-tag">DAZN UHD</span>
+            <span class="channel-tag">SSC Sports HD</span>
+            <span class="channel-tag">Arryadia TNT HD</span>
+          </div>
+        </div>
+
+        <div class="bouquet-card">
+          <div class="bouquet-title">🇲🇦 Monde Arabe & Maghreb</div>
+          <div class="bouquet-desc">Les grandes chaînes arabes, séries ramadanesques et actualités en continu.</div>
+          <div>
+            <span class="channel-tag">MBC HD & Shahid VIP</span>
+            <span class="channel-tag">OSN Cinema & Movies</span>
+            <span class="channel-tag">SNRT Maroc (2M, Al Aoula)</span>
+            <span class="channel-tag">Rotana Cinema HD</span>
+            <span class="channel-tag">Al Jazeera HD</span>
+          </div>
+        </div>
+
+        <div class="bouquet-card">
+          <div class="bouquet-title">🇫🇷 France & Europe</div>
+          <div class="bouquet-desc">Toutes les chaînes françaises TNT et câble en qualité native 4K et FHD.</div>
+          <div>
+            <span class="channel-tag">TF1 4K</span>
+            <span class="channel-tag">France 2 4K</span>
+            <span class="channel-tag">M6 HD</span>
+            <span class="channel-tag">Bouquet Ciné+</span>
+            <span class="channel-tag">RTBF Belgique</span>
+          </div>
+        </div>
+
+        <div class="bouquet-card">
+          <div class="bouquet-title">🎬 Cinéma & Séries VOD 2026</div>
+          <div class="bouquet-desc">+60 000 titres en 4K HDR avec sous-titres et pistes audio françaises/arabes.</div>
+          <div>
+            <span class="channel-tag">Films Box-Office 2026</span>
+            <span class="channel-tag">Netflix Originals</span>
+            <span class="channel-tag">HBO Max Series</span>
+            <span class="channel-tag">Disney+ & Prime</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 24h Free Trial -->
+  <section id="free-trial" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n-fr="Essai Gratuit" data-i18n-ar="تجربة مجانية" data-i18n-en="Free Trial">Essai Gratuit</span>
+        <h2 class="section-title" data-i18n-fr="Testez 24H Gratuitement Sans Engagement" data-i18n-ar="جرّب مجاناً لمدة 24 ساعة دون التزام" data-i18n-en="Test Free for 24 Hours with Zero Risk">Testez 24H Gratuitement Sans Engagement</h2>
+        <p class="section-desc" data-i18n-fr="Vérifiez la stabilité du serveur et la netteté de l'image sur votre téléviseur." data-i18n-ar="تأكد بنفسك من جودة الصورة وثبات البث على شاشتك الخاصة قبل الشراء." data-i18n-en="Check server stability and picture sharpness on your own screen before subscribing.">
+          Vérifiez la stabilité du serveur et la netteté de l'image sur votre téléviseur.
+        </p>
+      </div>
+
+      <div class="ibo-card" style="max-width: 600px; margin: 0 auto;">
+        <form onsubmit="submitTrial(event)">
+          <div class="form-group">
+            <label class="form-label" data-i18n-fr="Votre Nom :" data-i18n-ar="الاسم الكريم :" data-i18n-en="Your Name:">Votre Nom :</label>
+            <input type="text" id="trial-name" class="form-input" placeholder="Ex: Karim" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n-fr="Votre Appareil :" data-i18n-ar="نوع جهازك :" data-i18n-en="Your Device:">Votre Appareil :</label>
+            <input type="text" id="trial-device" class="form-input" placeholder="Ex: Samsung Smart TV / Firestick" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n-fr="Application installée :" data-i18n-ar="التطبيق المثبت لديك :" data-i18n-en="Installed App:">Application installée :</label>
+            <input type="text" id="trial-app" class="form-input" placeholder="Ex: IBO Player / IPTV Smarters" required>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+            <span data-i18n-fr="Envoyer ma demande sur WhatsApp" data-i18n-ar="إرسال طلب التجربة عبر واتساب" data-i18n-en="Send 24H Test Request on WhatsApp">Envoyer ma demande sur WhatsApp</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speed Test Simulator -->
+  <section id="speed" class="section">
+    <div class="container">
+      <div class="speed-box">
+        <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;" data-i18n-fr="Testeur de Connexion & Qualité" data-i18n-ar="أداة فحص سرعة الاتصال وتوافق الجودة" data-i18n-en="Connection & Quality Checker">Testeur de Connexion & Qualité</h3>
+        <p style="font-size: 0.85rem; color: #94A3B8;">Calculez la résolution optimale pour vos flux IPTV.</p>
+
+        <div class="speed-metric-display">
+          <div class="speed-metric-item">
+            <div style="font-size: 0.75rem; color: #94A3B8;">Débit simulé</div>
+            <div class="speed-number"><span id="speed-display">35</span> <span style="font-size: 1rem;">Mbps</span></div>
+          </div>
+          <div class="speed-metric-item">
+            <div style="font-size: 0.75rem; color: #94A3B8;">Latence (Ping)</div>
+            <div class="speed-number" style="color: #10B981;"><span id="ping-display">16</span> <span style="font-size: 1rem;">ms</span></div>
+          </div>
+        </div>
+
+        <button id="btn-speed-test" onclick="runSpeedTest()" class="btn-secondary">
+          <span>Tester ma ligne</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">FAQ</span>
+        <h2 class="section-title" data-i18n-fr="Questions Fréquentes" data-i18n-ar="الأسئلة الشائعة" data-i18n-en="Frequently Asked Questions">Questions Fréquentes</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item active">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Comment trouver l'adresse MAC et le Device Key sur IBO Player ?</span>
+            <span>▼</span>
+          </button>
+          <div class="faq-answer">
+            Ouvrez l'application IBO Player sur votre Smart TV. Dès l'écran d'accueil, vous verrez s'afficher deux mentions : « Device MAC address » et « Device Key ». Envoyez-les simplement à Aziz par WhatsApp pour une activation en moins de 5 minutes.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>En combien de temps mon abonnement est-il activé ?</span>
+            <span>▼</span>
+          </button>
+          <div class="faq-answer">
+            L'activation est quasi immédiate ! Aziz traite les demandes 7j/7 entre 09h00 et 23h00 en moins de 5 minutes après réception de votre message WhatsApp.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Quels sont les modes de paiement acceptés ?</span>
+            <span>▼</span>
+          </button>
+          <div class="faq-answer">
+            Virement bancaire marocain (CIH, Attijariwafa Bank...), Wafacash, Cash Plus, PayPal ou Carte bancaire.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with QR Code -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="margin-bottom: 1rem;">
+            <div class="logo-icon">EA</div>
+            <div>Electro <span>Aziz</span></div>
+          </div>
+          <p style="margin-bottom: 1rem;">Spécialiste de référence pour les abonnements IPTV stables et l'activation des licences officielles IBO Player.</p>
+          <p style="color: #64748B;">Support direct 7j/7 au +212666451752.</p>
+        </div>
+
+        <div>
+          <h4 style="color: #fff; margin-bottom: 1rem;">Liens Rapides</h4>
+          <p><a href="#plans">Abonnements</a></p>
+          <p><a href="#ibo-player">IBO Player</a></p>
+          <p><a href="#bouquets">Chaînes</a></p>
+          <p><a href="#free-trial">Test 24H</a></p>
+          <p><a href="#faq">FAQ</a></p>
+        </div>
+
+        <div>
+          <h4 style="color: #fff; margin-bottom: 1rem;">Contact Officiel</h4>
+          <p style="margin-bottom: 0.5rem;">
+            <a href="https://wa.me/212666451752" target="_blank" style="color: #10B981; font-weight: bold; font-family: monospace;">WhatsApp : +212666451752</a>
+          </p>
+          <p style="margin-bottom: 0.5rem;">
+            <a href="tel:+212666451752" style="font-family: monospace;">Tél : +212666451752</a>
+          </p>
+          <button onclick="copyPhone(event)" class="btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.75rem; margin-top: 0.5rem;">
+            Copier le numéro
+          </button>
+        </div>
+
+        <div>
+          <div class="footer-qr-card">
+            <div style="font-weight: bold; color: #fff; font-size: 0.8rem;">Scanner pour Commander</div>
+            <div class="qr-box">
+              <!-- Inline High Contrast WhatsApp QR SVG -->
+              <svg width="100" height="100" viewBox="0 0 29 29" shape-rendering="crispEdges">
+                <rect width="29" height="29" fill="#ffffff"/>
+                <path fill="#070A0F" d="M0,0 h7 v7 h-7 z M1,1 h5 v5 h-5 z M2,2 h3 v3 h-3 z M22,0 h7 v7 h-7 z M23,1 h5 v5 h-5 z M24,2 h3 v3 h-3 z M0,22 h7 v7 h-7 z M1,23 h5 v5 h-5 z M2,24 h3 v3 h-3 z M9,0 h2 v2 h-2 z M13,0 h3 v1 h-3 z M18,0 h2 v3 h-2 z M8,2 h1 v4 h-1 z M12,2 h2 v2 h-2 z M15,2 h2 v2 h-2 z M9,4 h2 v1 h-2 z M13,4 h1 v3 h-1 z M16,4 h4 v1 h-4 z M10,6 h2 v2 h-2 z M15,6 h2 v1 h-2 z M18,6 h2 v3 h-2 z M8,8 h5 v1 h-5 z M14,8 h2 v2 h-2 z M17,8 h3 v1 h-3 z M21,8 h2 v2 h-2 z M24,8 h2 v1 h-2 z M27,8 h2 v3 h-2 z M0,9 h1 v4 h-1 z M2,9 h2 v2 h-2 z M5,9 h2 v2 h-2 z M9,10 h2 v2 h-2 z M12,10 h1 v2 h-1 z M15,10 h2 v1 h-2 z M18,10 h1 v2 h-1 z M21,10 h2 v1 h-2 z M24,10 h2 v2 h-2 z M1,12 h2 v1 h-2 z M4,12 h3 v2 h-3 z M8,12 h3 v1 h-3 z M14,12 h2 v2 h-2 z M17,12 h3 v1 h-3 z M22,12 h1 v2 h-1 z M25,12 h2 v2 h-2 z M28,12 h1 v3 h-1 z M9,14 h2 v2 h-2 z M12,14 h2 v1 h-2 z M16,14 h2 v2 h-2 z M20,14 h1 v2 h-1 z M23,14 h2 v2 h-2 z M0,16 h3 v2 h-3 z M4,16 h2 v1 h-2 z M7,16 h2 v2 h-2 z M10,16 h2 v2 h-2 z M14,16 h3 v1 h-3 z M18,16 h2 v2 h-2 z M22,16 h1 v2 h-1 z M26,16 h2 v1 h-2 z M2,18 h2 v1 h-2 z M5,18 h1 v3 h-1 z M8,18 h2 v2 h-2 z M12,18 h2 v2 h-2 z M16,18 h1 v2 h-1 z M19,18 h2 v2 h-2 z M23,18 h3 v1 h-3 z M28,18 h1 v3 h-1 z M8,20 h2 v2 h-2 z M11,20 h2 v1 h-2 z M14,20 h2 v2 h-2 z M18,20 h2 v1 h-2 z M21,20 h2 v2 h-2 z M25,20 h2 v1 h-2 z M0,21 h1 v2 h-1 z M3,21 h1 v2 h-1 z M6,21 h2 v2 h-2 z M9,22 h3 v1 h-3 z M13,22 h2 v2 h-2 z M17,22 h2 v1 h-2 z M21,22 h3 v1 h-3 z M26,22 h2 v2 h-2 z M8,24 h2 v2 h-2 z M11,24 h2 v1 h-2 z M15,24 h2 v2 h-2 z M19,24 h1 v2 h-1 z M22,24 h2 v1 h-2 z M25,24 h1 v3 h-1 z M28,24 h1 v2 h-1 z M9,26 h2 v2 h-2 z M13,26 h2 v1 h-2 z M17,26 h2 v2 h-2 z M20,26 h2 v2 h-2 z M23,26 h2 v1 h-2 z M27,26 h2 v2 h-2 z"/>
+              </svg>
+            </div>
+            <div style="font-size: 0.75rem; color: #94A3B8;">Scannez pour ouvrir WhatsApp</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 1.5rem; font-size: 0.75rem;">
+        © 2026 Electro Aziz. Tous droits réservés. WhatsApp Officiel : +212666451752
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action -->
+  <div class="floating-whatsapp">
+    <div class="whatsapp-bubble">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.4rem;">
+          <span class="pulse-dot"></span>
+          <strong style="color: #fff;">Electro Aziz WhatsApp</strong>
+        </div>
+        <button onclick="copyPhone(event)" style="background: none; border: none; color: #94A3B8; cursor: pointer; font-size: 0.75rem;">📋 Copier</button>
+      </div>
+      <p style="color: #CBD5E1; margin-bottom: 0.5rem;">Une question ou besoin d'activer votre abonnement IPTV / IBO Player ?</p>
+      <a href="https://wa.me/212666451752" target="_blank" style="color: #10B981; font-weight: bold; font-family: monospace;">+212666451752</a>
+    </div>
+
+    <a href="https://wa.me/212666451752" target="_blank" class="btn-float-action">
+      <span>💬 WhatsApp : +212666451752</span>
+    </a>
+  </div>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
